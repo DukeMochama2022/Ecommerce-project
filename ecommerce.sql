@@ -2,11 +2,11 @@
 CREATE DATABASE IF NOT EXISTS ecommerce;
 
 
-use ecommerce;
+USE ecommerce;
 
 -- Table: product_image
 CREATE TABLE product_image (
-    image_id INT PRIMARY KEY AUTO_INCREMENT,
+    image_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     product_id INT,
     image_url VARCHAR(255),
     alt_text VARCHAR(255),
@@ -15,32 +15,32 @@ CREATE TABLE product_image (
 
 -- Table: color
 CREATE TABLE color (
-    color_id INT PRIMARY KEY AUTO_INCREMENT,
+    color_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     color_name VARCHAR(50) NOT NULL,
     color_code VARCHAR(10)
 );
 
 -- Table: product_category
 CREATE TABLE product_category (
-    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    category_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     category_name VARCHAR(100)  NOT NULL,
-    description TEXT
+    category_description TEXT
 );
 
 -- Table: brand
 CREATE TABLE brand (
-    brand_id INT PRIMARY KEY AUTO_INCREMENT,
+    brand_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     brand_name VARCHAR(100) NOT NULL,
-    description TEXT
+    brand_description TEXT
 );
 
 -- Table: product
 CREATE TABLE product (
-    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    product_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     category_id INT,
     brand_id INT,
     product_name VARCHAR(255),
-    description TEXT,
+    product_description TEXT,
     base_price DECIMAL(10, 2),
     FOREIGN KEY (category_id) REFERENCES product_category(category_id),
     FOREIGN KEY (brand_id) REFERENCES brand(brand_id)
@@ -50,7 +50,7 @@ CREATE TABLE product (
 CREATE TABLE product_item (
     item_id INT PRIMARY KEY AUTO_INCREMENT,
     variation_id INT,
-    sku VARCHAR(50) ,
+    sku VARCHAR(50),
     price DECIMAL(10, 2),
     quantity INT,
     FOREIGN KEY (variation_id) REFERENCES product_variation(variation_id)
