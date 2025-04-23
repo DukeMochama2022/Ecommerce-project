@@ -19,6 +19,6 @@
 
 ## ERD
 
-![ERD Diagram for E-commerce](E-COMMERCE(1).png)
+![ERD Diagram for E-commerce](E-COMMERCE.png)
 
 
