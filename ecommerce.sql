@@ -1,24 +1,6 @@
-
 CREATE DATABASE IF NOT EXISTS ecommerce;
 
-
 USE ecommerce;
-
--- Table: product_image
-CREATE TABLE product_image (
-    image_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    product_id INT,
-    image_url VARCHAR(255),
-    alt_text VARCHAR(255),
-    FOREIGN KEY (product_id) REFERENCES product(product_id)
-);
-
--- Table: color
-CREATE TABLE color (
-    color_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    color_name VARCHAR(50) NOT NULL,
-    color_code VARCHAR(10)
-);
 
 -- Table: product_category
 CREATE TABLE product_category (
@@ -34,6 +16,15 @@ CREATE TABLE brand (
     brand_description TEXT
 );
 
+
+-- Table: color
+CREATE TABLE color (
+    color_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    color_name VARCHAR(50) NOT NULL,
+    color_code VARCHAR(10)
+);
+
+
 -- Table: product
 CREATE TABLE product (
     product_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -46,15 +37,16 @@ CREATE TABLE product (
     FOREIGN KEY (brand_id) REFERENCES brand(brand_id)
 );
 
--- Table: product_item
-CREATE TABLE product_item (
-    item_id INT PRIMARY KEY AUTO_INCREMENT,
-    variation_id INT,
-    sku VARCHAR(50),
-    price DECIMAL(10, 2),
-    quantity INT,
-    FOREIGN KEY (variation_id) REFERENCES product_variation(variation_id)
+-- Table: product_image
+CREATE TABLE product_image (
+    image_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    product_id INT,
+    image_url VARCHAR(255),
+    alt_text VARCHAR(255),
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
+
+
 
 -- Table: size_category
 CREATE TABLE size_category (
@@ -79,6 +71,17 @@ CREATE TABLE product_variation (
     FOREIGN KEY (product_id) REFERENCES product(product_id),
     FOREIGN KEY (size_option_id) REFERENCES size_option(size_option_id),
     FOREIGN KEY (color_id) REFERENCES color(color_id)
+);
+
+
+-- Table: product_item
+CREATE TABLE product_item (
+    item_id INT PRIMARY KEY AUTO_INCREMENT,
+    variation_id INT,
+    sku VARCHAR(50),
+    price DECIMAL(10, 2),
+    quantity INT,
+    FOREIGN KEY (variation_id) REFERENCES product_variation(variation_id)
 );
 
 -- Table: attribute_category
