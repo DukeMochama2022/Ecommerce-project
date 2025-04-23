@@ -1,4 +1,4 @@
-##  ecommerce project.
+##  Ecommerce project.
 
 ## Contributers
     1. Duke Mochama-dukemochama@gmail.com
@@ -7,8 +7,8 @@
     4.
 
 # Instructions
- ## Create an ERD
- ## Plan the Dataflow
+  * Create an ERD
+  * Plan the Dataflow
 
 ## Objectives
   1. Implement an Entity-Relationship Diagram (ERD).
