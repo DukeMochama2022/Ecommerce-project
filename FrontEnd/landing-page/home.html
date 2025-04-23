@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopMate - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="flex justify-between items-center h-16 px-[10px] max-w-7xl mx-auto"
+      >
+        <!-- Logo -->
+        <div class="flex-shrink-0 text-2xl font-bold text-blue-600">
+          <a href="./home.html">ShopMate</a>
+        </div>
+
+        <!-- Menu + Auth + Cart -->
+        <div class="flex items-center space-x-4">
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-6 items-center">
+            <a href="./home.html" class="hover:text-blue-600">Home</a>
+            <a href="#" class="hover:text-blue-600">Shop</a>
+            <a href="#" class="hover:text-blue-600">About</a>
+            <a href="#" class="hover:text-blue-600">Contact</a>
+          </div>
+
+          <!-- Auth Buttons -->
+          <div class="hidden md:flex space-x-4">
+            <a
+              href="../login-page/log-in.html"
+              class="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition"
+              >Login</a
+            >
+            <a
+              href="../login-page/register.html"
+              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+              >Register</a
+            >
+          </div>
+
+          <!-- Cart Button -->
+          <a
+            href="#"
+            id="cart-btn"
+            class="relative inline-block text-gray-800 hover:text-blue-600 transition"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 3h2l.4 2M7 13h14l-1.35 5.45a2 2 0 01-1.95 1.55H8.4a2 2 0 01-1.95-1.55L5 6H3"
+              ></path>
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+            </svg>
+            <span
+              id="cart-count"
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+              >0</span
+            >
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="focus:outline-none">
+              <svg
+                class="h-6 w-6 text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden px-4 pb-4 space-y-2 bg-white border-t border-gray-200"
+      >
+        <a href="./home.html" class="block py-2 hover:text-blue-600">Home</a>
+        <a href="#" class="block py-2 hover:text-blue-600">Shop</a>
+        <a href="#" class="block py-2 hover:text-blue-600">About</a>
+        <a href="#" class="block py-2 hover:text-blue-600">Contact</a>
+        <a href="../login-page/log-in.html" class="block py-2 text-blue-600"
+          >Login</a
+        >
+        <a
+          href="../login-page/register.html"
+          class="block py-2 text-white bg-blue-600 rounded text-center"
+          >Register</a
+        >
+      </div>
+    </nav>
+
+    <!-- Slideshow -->
+    <section class="relative w-full h-[500px] overflow-hidden">
+      <img
+        id="slide-img"
+        src="/images/slide1.jpg"
+        alt="Slideshow"
+        class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100"
+      />
+
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center px-4"
+      >
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Discover Deals at ShopMate
+        </h1>
+        <p class="text-lg md:text-xl">Great products, unbeatable prices</p>
+      </div>
+
+      <!-- Slideshow Controls -->
+      <button
+        id="prev-slide"
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75"
+      >
+        &#10094;
+      </button>
+      <button
+        id="next-slide"
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75"
+      >
+        &#10095;
+      </button>
+    </section>
+    <script src="../landing-page/home.js"></script>
+  </body>
+</html>
