@@ -6,7 +6,7 @@
     3. 
     4.
 
-# Instructions
+## Instructions
   * Create an ERD
   * Plan the Dataflow
 
@@ -17,6 +17,8 @@
   4. Identify primary keys, foreign keys, and other constraints.
 
 
+## ERD
 
+![ERD Diagram for E-commerce](E-COMMERCE.png)
 
 
